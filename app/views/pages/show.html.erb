@@ -1,13 +1,17 @@
 
-<h1> BuyByCash </h1>
-<h2> DON'T FALL BEHIND, GO ONLINE </h2>
-<h3> How does it work? </h3>
 
 
-<% if @user.ebuyer? == true %>
-<% @users.each do |cocktail| %>
-<p><%= user.name %></p>
-<%= image_tag(user.image_url)%>
-<% else %>
-<p> No user found</p>
-<% end %>
+
+<%= @ebuyer.name %>
+<%= @ebuyer.surname %>
+<%= @ebuyer.age %>
+<%= @ebuyer.city %>
+<%= @ebuyer.address %>
+<%= @ebuyer.tagline %>
+<%= @ebuyer.bio %>
+<%= @ebuyer.average_rating %>
+<%= @ebuyer.photo %>
+
+
+
+

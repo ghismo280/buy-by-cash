@@ -6,4 +6,11 @@ class PagesController < ApplicationController
   def show
     @ebuyer = User.find(params[:id])
   end
+
+  private
+
+  def users
+    @users = User.all
+
+  end
 end
