@@ -4,9 +4,11 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "bootstrap": "3",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "mapbox": "^1.0.0-beta10"
   },
   "devDependencies": {
+    "rails-erb-loader": "^5.5.0",
     "webpack-dev-server": "2.11.2"
   }
 }
