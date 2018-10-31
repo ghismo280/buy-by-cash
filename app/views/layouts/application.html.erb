@@ -15,6 +15,7 @@
     <%= yield %>
 
     <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag "https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js" %>
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>
