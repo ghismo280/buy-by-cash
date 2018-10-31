@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-
+    @ebuyers = User.where(ebuyer: true)
   end
 
   def show
@@ -11,6 +11,5 @@ class PagesController < ApplicationController
 
   def users
     @users = User.all
-
   end
 end
