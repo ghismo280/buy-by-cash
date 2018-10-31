@@ -2,8 +2,15 @@ require 'faker'
 puts "Deleting all Users"
 
 User.destroy_all
+Conversation.destroy_all
+Message.destroy_all
+Review.destroy_all
+
+
 
 # USER --------------------------------------
+url = "http://i.pravatar.cc/150"
+
 puts "Creating eBuyers"
 10.times do
   ebuyer = User.new(
@@ -11,8 +18,14 @@ puts "Creating eBuyers"
     surname: Faker::Name.middle_name,
     email: Faker::Internet.email,
     city: Faker::Address.city,
+    address: Faker::Address.street_address,
     ebuyer: true,
-    password: "123456"
+    age: rand(18..65),
+    bio: Faker::Lorem.paragraph,
+    tagline: Faker::RickAndMorty.quote,
+    password: "123456",
+    photo: url,
+    average_rating: rand(0..5)
   )
   ebuyer.save!
 end
@@ -24,8 +37,11 @@ puts "Creating Customers"
     surname: Faker::Name.middle_name,
     email: Faker::Internet.email,
     city: Faker::Address.city,
+    address: Faker::Address.street_address,
     ebuyer: false,
-    password: "123456"
+    age: rand(18..65),
+    password: "123456",
+    photo: url,
   )
   customer.save!
 end
@@ -35,7 +51,8 @@ end
 puts "Creating Conversations"
 10.times do
   conversation = Conversation.new(
-    string: Faker::Lebowski.quote,
+    sender_id: User.where(ebuyer: false).sample.id,
+    recipient_id: User.where(ebuyer: true).sample.id,
   )
   conversation.save!
 end
@@ -46,6 +63,7 @@ puts "Creating Messages"
 10.times do
   message = Message.new(
     body: Faker::Seinfeld.quote,
+    conversation_id: Conversation.all.sample.id,
   )
   message.save!
 end
@@ -56,6 +74,8 @@ puts "Creating Reviews"
 10.times do
   review = Review.new(
     body: Faker::SiliconValley.quote,
-    stars:  rand(0..5)
+    stars:  rand(0..5),
+    user_id: User.all.sample.id,
   )
   review.save!
+end
