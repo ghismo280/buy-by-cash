@@ -59,4 +59,3 @@ puts "Creating Reviews"
     stars:  rand(0..5)
   )
   review.save!
-end

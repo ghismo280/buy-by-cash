@@ -10,25 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_31_152530) do
+
+ActiveRecord::Schema.define(version: 2018_10_31_162753) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "conversations", force: :cascade do |t|
-    t.string "string"
-    t.bigint "user_id"
-    t.integer "recipient_id"
+    t.bigint "sender_id"
+    t.bigint "recipient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_conversations_on_user_id"
+    t.index ["recipient_id"], name: "index_conversations_on_recipient_id"
+    t.index ["sender_id"], name: "index_conversations_on_sender_id"
   end
 
   create_table "messages", force: :cascade do |t|
-    t.bigint "conversation_id"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "conversation_id"
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
   end
 
@@ -54,11 +56,16 @@ ActiveRecord::Schema.define(version: 2018_10_31_152530) do
     t.string "surname"
     t.string "city"
     t.boolean "ebuyer"
+    t.integer "age"
+    t.string "address"
+    t.text "tagline"
+    t.text "bio"
+    t.integer "average_rating"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "conversations", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "reviews", "users"
 end
