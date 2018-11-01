@@ -25,8 +25,8 @@ url = "http://i.pravatar.cc/150"
     tagline: Faker::RickAndMorty.quote,
     password: "123456",
     photo: url,
-    average_rating: rand(0..5)
-    fee: rand(10..20)
+    average_rating: rand(0..5),
+    fee: rand(10..20),
     start_date: Faker::Date.between(2.days.ago, Date.today) #=> "Wed, 24 Sep 2014"
   )
   ebuyer.save!

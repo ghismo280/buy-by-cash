@@ -1,5 +1,5 @@
 <div class="container">
-
+<%=  render "shared/navbar" %>
   <h3 class="text-center">
     These guys can help you:
   </h3>
@@ -8,10 +8,11 @@
   id="map"
   style="width: 85%; height: 600px"
 ></div>
-  
-  
+
+
   <% @ebuyers.each do |ebuyer| %>
-    <%=link_to( <div class="main-card">
+    <%= link_to "/#{ebuyer.id}" do%>
+     <div class="main-card">
       <img class="avatar-ebuyer" src= <%= ebuyer.photo %> />
         <div class="info">
           <div class="info-name">
@@ -26,10 +27,11 @@
             <%= ebuyer.tagline %>
           </div>
         </div>
-    </div>, "/#{ebuyer.id}")%>
+    </div>
+    <% end %>
   <% end %>
 <!-- chiusura container -->
-</div>
+    </div>
 
 
 <%= javascript_tag do %>
