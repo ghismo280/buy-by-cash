@@ -1,20 +1,35 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
 
-<h1 class="text-center">These guys can help you:</h1>
+  <h3 class="text-center">
+    These guys can help you:
+  </h3>
 
-<div
+  <div
   id="map"
-  style="width: 75%; height: 600px"
+  style="width: 85%; height: 600px"
 ></div>
-
-<ul>
-<% @ebuyers.each do |ebuyer| %>
- <li> <%= link_to( "Hi! i'm #{ebuyer.name} #{ebuyer.surname} i live in #{ebuyer.city}", "/#{ebuyer.id}")%> </li>
-<% end %>
-</ul>
-
-<%= @markers_json %>
+  
+  
+  <% @ebuyers.each do |ebuyer| %>
+    <%=link_to( <div class="main-card">
+      <img class="avatar-ebuyer" src= <%= ebuyer.photo %> />
+        <div class="info">
+          <div class="info-name">
+            Name: <b><%= ebuyer.name %> <%= ebuyer.surname %></b>
+          </div>
+          <div class="info-middle">
+            Age: <b><%= ebuyer.age %></b> &nbsp; | &nbsp;
+            Rating: <b><%= ebuyer.average_rating %></b> <br>
+            City: <b><%= ebuyer.city %></b>
+          </div>
+          <div class="info-tagline">
+            <%= ebuyer.tagline %>
+          </div>
+        </div>
+    </div>, "/#{ebuyer.id}")%>
+  <% end %>
+<!-- chiusura container -->
+</div>
 
 
 <%= javascript_tag do %>
@@ -24,3 +39,4 @@
 
   window.hello = b
 <% end %>
+
