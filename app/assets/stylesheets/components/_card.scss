@@ -1,0 +1,22 @@
+
+
+.main-card {
+  display: flex;
+  margin: 10px 0;
+  background-color: #FFFFFF;
+  border-bottom-left-radius: 75px;
+  border-top-left-radius: 75px;
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+  font-size: 12px;
+}
+
+.avatar-ebuyer {
+  border-radius: 50%;
+  width: 30%;
+  height: 30%;
+}
+
+.info {
+  padding-left: 10px;
+}

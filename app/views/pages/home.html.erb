@@ -1,8 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
 
-<h1 class="text-center">These guys can help you:</h1>
+  <h3 class="text-center">
+    These guys can help you:
+  </h3>
 
-<% @ebuyers.each do |ebuyer| %>
-<p><%= "Hi! i'm #{ebuyer.name} #{ebuyer.surname} i live in #{ebuyer.city}" %></p>
-<% end %>
+
+  <% @ebuyers.each do |ebuyer| %>
+    <div class="main-card">
+      <img class="avatar-ebuyer" src= <%= ebuyer.photo %> />
+        <div class="info">
+          <div class="info-name">
+            Name: <b><%= ebuyer.name %> <%= ebuyer.surname %></b>
+          </div>
+          <div class="info-middle">
+            Age: <b><%= ebuyer.age %></b> &nbsp; | &nbsp;
+            Rating: <b><%= ebuyer.average_rating %></b> <br>
+            City: <b><%= ebuyer.city %></b>
+          </div>
+          <div class="info-tagline">
+            <%= ebuyer.tagline %>
+          </div>
+        </div>
+    </div>
+  <% end %>
+<!-- chiusura container -->
+</div>
