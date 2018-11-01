@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:200,400,600" rel="stylesheet">
     <title>TODO</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
@@ -12,7 +13,7 @@
   </head>
   <body>
     <%= render 'shared/flashes' %>
-    <%= render 'shared/navbar' %>
+    <%#= render 'shared/navbar' %>
     <%= yield %>
 
     <%= javascript_include_tag "https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js" %>
