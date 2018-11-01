@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   has_many :sender_conversations, class_name: 'Conversation', foreign_key: 'sender_id'
   has_many :recipient_conversations, class_name: 'Conversation', foreign_key: 'recipient_id'
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

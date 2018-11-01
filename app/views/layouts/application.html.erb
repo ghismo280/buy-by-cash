@@ -8,13 +8,18 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
   </head>
   <body>
     <%= render 'shared/flashes' %>
     <%= render 'shared/navbar' %>
     <%= yield %>
 
+    <%= javascript_include_tag "https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js" %>
     <%= javascript_include_tag 'application' %>
+
     <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag 'map' %>
+
   </body>
 </html>

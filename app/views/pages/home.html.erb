@@ -3,6 +3,24 @@
 
 <h1 class="text-center">These guys can help you:</h1>
 
+<div
+  id="map"
+  style="width: 75%; height: 600px"
+></div>
+
+<ul>
 <% @ebuyers.each do |ebuyer| %>
-<p><%= "Hi! i'm #{ebuyer.name} #{ebuyer.surname} i live in #{ebuyer.city}" %></p>
+ <li> <%= link_to( "Hi! i'm #{ebuyer.name} #{ebuyer.surname} i live in #{ebuyer.city}", "/#{ebuyer.id}")%> </li>
+<% end %>
+</ul>
+
+<%= @markers_json %>
+
+
+<%= javascript_tag do %>
+  window._rails_env = "<%= ENV["MAP_BOX_API_SERVER_KEY"] %>"
+  const dirty_array = "<%= @array.html_safe %>"
+  const b = dirty_array.split(";")
+
+  window.hello = b
 <% end %>
