@@ -4,9 +4,14 @@
     These guys can help you:
   </h3>
 
-
+  <div
+  id="map"
+  style="width: 85%; height: 600px"
+></div>
+  
+  
   <% @ebuyers.each do |ebuyer| %>
-    <div class="main-card">
+    <%=link_to( <div class="main-card">
       <img class="avatar-ebuyer" src= <%= ebuyer.photo %> />
         <div class="info">
           <div class="info-name">
@@ -21,7 +26,17 @@
             <%= ebuyer.tagline %>
           </div>
         </div>
-    </div>
+    </div>, "/#{ebuyer.id}")%>
   <% end %>
 <!-- chiusura container -->
 </div>
+
+
+<%= javascript_tag do %>
+  window._rails_env = "<%= ENV["MAP_BOX_API_SERVER_KEY"] %>"
+  const dirty_array = "<%= @array.html_safe %>"
+  const b = dirty_array.split(";")
+
+  window.hello = b
+<% end %>
+
