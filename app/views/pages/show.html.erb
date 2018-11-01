@@ -1,16 +1,45 @@
 
 
+<div class="banner">
+<%= render 'shared/navbar' %>
+ <!--  <img src="https://picsum.photos/200/300/?random"> -->
+</div>
+
+<div class="avatar">
+  <img src=<%= @ebuyer.photo %>, style="height: 120px; border-radius: 5px" >
+</div>
 
 
-<%= @ebuyer.name %>
-<%= @ebuyer.surname %>
-<%= @ebuyer.age %>
+<br>
+<br>
+<div class="header">
+  <%= @ebuyer.name %> <%= @ebuyer.surname %>, <%= @ebuyer.age %>
+</div>
+
+</div>
+<div class="city">
 <%= @ebuyer.city %>
-<%= @ebuyer.address %>
-<%= @ebuyer.tagline %>
+</div>
+
+
+ <div class= "ratings">
+   <% @ebuyer.average_rating.to_i.times do  %>
+    <i class="fas fa-star"></i>
+   <% end %>
+ </div>
+
+<br>
+<br>
+<div class="bio">
 <%= @ebuyer.bio %>
-<%= @ebuyer.average_rating %>
-<%= @ebuyer.photo %>
+</div>
+
+<br>
+<br>
+
+<div class="chat" align="center">
+<a href="" class="btn-chat"> Start chatting with <%= @ebuyer.name%></a>
+</div>
 
 
 
