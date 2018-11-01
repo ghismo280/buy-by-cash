@@ -1,19 +1,81 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+puts "Deleting all Users"
 
-(1..30).each do |num|
-  a = User.new(email: "#{num}mail@gmail.com", password:'1q2w3e44iuhqurhq',
-                name:"#{num} name", surname:"#{num} surname", city: "#{num}city")
-  if num % rand(2) == 0
-    bool = true
-  else
-    bool = false
-  end
-  a.ebuyer = bool
-  a.save!
+User.destroy_all
+Conversation.destroy_all
+Message.destroy_all
+Review.destroy_all
+
+
+
+# USER --------------------------------------
+url = "http://i.pravatar.cc/150"
+
+puts "Creating eBuyers"
+10.times do
+  ebuyer = User.new(
+    name: Faker::Name.first_name,
+    surname: Faker::Name.middle_name,
+    email: Faker::Internet.email,
+    city: Faker::Address.city,
+    address: Faker::Address.street_address,
+    ebuyer: true,
+    age: rand(18..65),
+    bio: Faker::Lorem.paragraph,
+    tagline: Faker::RickAndMorty.quote,
+    password: "123456",
+    photo: url,
+    average_rating: rand(0..5)
+  )
+  ebuyer.save!
+end
+
+puts "Creating Customers"
+10.times do
+  customer = User.new(
+    name: Faker::Name.first_name,
+    surname: Faker::Name.middle_name,
+    email: Faker::Internet.email,
+    city: Faker::Address.city,
+    address: Faker::Address.street_address,
+    ebuyer: false,
+    age: rand(18..65),
+    password: "123456",
+    photo: url,
+  )
+  customer.save!
+end
+
+
+# CONVERSATION -----------------------------------
+puts "Creating Conversations"
+10.times do
+  conversation = Conversation.new(
+    sender_id: User.where(ebuyer: false).sample.id,
+    recipient_id: User.where(ebuyer: true).sample.id,
+  )
+  conversation.save!
+end
+
+
+# MESSAGE -----------------------------------
+puts "Creating Messages"
+10.times do
+  message = Message.new(
+    body: Faker::Seinfeld.quote,
+    conversation_id: Conversation.all.sample.id,
+  )
+  message.save!
+end
+
+
+# REVIEW -----------------------------------
+puts "Creating Reviews"
+10.times do
+  review = Review.new(
+    body: Faker::SiliconValley.quote,
+    stars:  rand(0..5),
+    user_id: User.all.sample.id,
+  )
+  review.save!
 end
