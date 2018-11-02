@@ -3,3 +3,13 @@
 // @import "dashboard";
 // @import "profile";
 // @import "map";
+.message-box {
+  background: mintcream;
+  color: darkblue;
+}
+
+.center {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px;
+}
