@@ -13,10 +13,9 @@ class PagesController < ApplicationController
    # @markers_json = @markers
    #-----------------------------------------------------
 
-   @array = ""
-   @ebuyers.each do |ebuyer|
-
-     @array << "#{ebuyer.name}, #{ebuyer.latitude}, #{ebuyer.longitude};"
+    @array = ""
+    @ebuyers.each do |ebuyer|
+      @array << "#{ebuyer.name}, #{ebuyer.latitude}, #{ebuyer.longitude};"
     end
 
   end
