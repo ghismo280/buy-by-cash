@@ -1,0 +1,23 @@
+
+footer {
+    display: flex;
+    padding: 10px 5px;
+    background-color: #468BE2;
+    color: #fff;
+}
+
+footer p {
+    flex: 1;
+    margin: 0;
+    font-size: 10px;
+}
+
+footer ul {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    font-size: 10px;
+}
