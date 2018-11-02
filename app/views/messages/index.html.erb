@@ -1,0 +1,29 @@
+<h1 class="text-center">Messages</h1>
+
+<div class="center">
+  <%= link_to '/' do  %>
+    <div class="btn btn-info" ">Back HOME</div>
+  <% end %>
+</div>
+
+<% if user_signed_in? %>
+
+  <% @messages.each do |mex| %>
+    <div class="message-box">
+      <h2 class="text-center" > from: <%= mex.conversation.sender.name %></h2>
+      <h3><%= mex.conversation.sender.email %></h3>
+      <p style="font-size: 25px; margin:0px 20px 18px"><%= mex.body %></p>
+      <%= mex.created_at %>
+      <div class="center">
+        <%= link_to '/' do  %>
+          <div class="btn btn-primary" ">Accept the Job</div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+<% else %>
+
+<h1 class="text-center">You are not logged bicc</h1>
+
+<% end %>

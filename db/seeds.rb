@@ -63,7 +63,7 @@ end
 
 # MESSAGE -----------------------------------
 puts "Creating Messages"
-10.times do
+80.times do
   message = Message.new(
     body: Faker::Seinfeld.quote,
     conversation_id: Conversation.all.sample.id,
@@ -74,11 +74,12 @@ end
 
 # REVIEW -----------------------------------
 puts "Creating Reviews"
-10.times do
+30.times do
   review = Review.new(
     body: Faker::SiliconValley.quote,
     stars:  rand(0..5),
     user_id: User.all.sample.id,
+    recipient_id: rand(1..User.all.length)
   )
   review.save!
 end
