@@ -9,6 +9,15 @@
   style="width: 85%; height: 600px"
 ></div>
 
+<div class="form-container">
+  <form>
+    <div class="form-group">
+      <label for="citySearchBox">City search</label>
+      <input type="text" class="form-control" id="citySearchBox" aria-describedby="cityHelp" placeholder="Enter your city">
+      <small id="emailHelp" class="form-text text-muted">Enter the city where you live and you'll see the nearest people who can help you.</small>
+    </div>
+  </form>
+</div>
 
   <% @ebuyers.each do |ebuyer| %>
     <%= link_to "/#{ebuyer.id}" do%>
