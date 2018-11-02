@@ -7,3 +7,43 @@
   border-radius: 50%;
   cursor: pointer;
 }
+
+body {
+  background-color: #fafafa;
+}
+
+.container{
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  background: white;
+  transition: all 0.3s ease;
+  height: 60px;
+  width: 100%;
+  padding: 0px 30px;
+  justify-content: space-between;
+  position: relative;
+  top: -35px;
+
+}
+
+.container:active{
+  text-decoration: none;
+}
+
+.navbar-wagon h1 {
+  font-size: 42px;
+  text-align: center;
+  position: relative;
+  top: -25px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 400px;
+  text-decoration: none;
+}
+
+canvas {
+
+position: absolute !important;
+width: 414px !important;
+height: 500px !important;
+top: 150px !important;
+
+}

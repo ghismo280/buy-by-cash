@@ -12,6 +12,10 @@
 
 }
 
+.navbar-wagon-brand:active{
+  text-decoration: none;
+}
+
 .navbar-wagon h1 {
   font-size: 42px;
   text-align: center;
@@ -19,8 +23,8 @@
   top: -25px;
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 400px;
+  text-decoration: none;
 }
-
 
 /* Basic navbar item */
 .navbar-wagon-item {
