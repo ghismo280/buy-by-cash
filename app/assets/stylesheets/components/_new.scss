@@ -11,37 +11,35 @@
   padding: 10px 15px;
   border-radius: 4px;
   font-weight: bold;
-  background: #3c5898;
+  background: #3b5998;
   transition: background 0.3s ease;
   text-align: center;
   font-family: 'Barlow Condensed', sans-serif;
   border: 1px white;
 }
-.btn-facebook:hover {
-  opacity: 1;
-  background: #3ac162;
-  text-decoration: none;
-  color: white;
 
-}
 
 .btn-google {
+ width: 30%;
+ margin:0 auto;
  font-size: 15px;
- color: black;
  padding: 10px 15px;
  border-radius: 4px;
  font-weight: bold;
- background: white;
+ background: white !important;
  transition: background 0.3s ease;
  text-align: center;
  font-family: 'Barlow Condensed', sans-serif;
- border: 1px solid black;
+ border: 1px solid #594A26;
+
+    color: black !important;
+  a {
+    text-decoration: none;
+  }
 }
-.btn-google:hover {
-  opacity: 1;
-  background: #3ac162;
-  text-decoration: none;
-  color: white;
+
+.white {
+ background: white !important;
 
 }
 
@@ -50,10 +48,26 @@
  font-family: 'Barlow Condensed', sans-serif;
  font-weight: lighter;
  font-size: 20px;
- color: green;
+ color: #594A26;
 
+}
+
+.login {
+  text-align: center;
 }
 
 .newbuttons {
   margin: 0 auto !important;
 }
+
+.loginbutton{
+  background-color: #594A26 !important;
+ border: 1px solid #CEFF1A !important;
+  a {
+    color: #CEFF1A !important;
+  }
+}
+
+
+
+

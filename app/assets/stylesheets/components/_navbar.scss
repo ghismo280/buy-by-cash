@@ -37,10 +37,6 @@
   color: #616668;
   font-size: 14px;
 }
-.navbar-wagon-link:hover {
-  color: #da552f;
-  text-decoration: none;
-}
 
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
@@ -56,10 +52,7 @@
   line-height: 22px !important;
   padding: 10px 20px;
 }
-.navbar-wagon-dropdown-menu li > a:hover {
-  background: transparent !important;
-  color: black !important;
-}
+
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
   height: 10px;
