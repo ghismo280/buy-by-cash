@@ -1,0 +1,73 @@
+// _newuser.scss
+
+.signup {
+  text-align: center;
+}
+
+
+.btn-facebook {
+  font-size: 13.5px;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #3b5998;
+  transition: background 0.3s ease;
+  text-align: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  border: 1px white;
+}
+
+
+.btn-google {
+ width: 30%;
+ margin:0 auto;
+ font-size: 15px;
+ padding: 10px 15px;
+ border-radius: 4px;
+ font-weight: bold;
+ background: white !important;
+ transition: background 0.3s ease;
+ text-align: center;
+ font-family: 'Barlow Condensed', sans-serif;
+ border: 1px solid #594A26;
+
+    color: black !important;
+  a {
+    text-decoration: none;
+  }
+}
+
+.white {
+ background: white !important;
+
+}
+
+.newform {
+ text-align: center;
+ font-family: 'Barlow Condensed', sans-serif;
+ font-weight: lighter;
+ font-size: 20px;
+ color: #594A26;
+
+}
+
+.login {
+  text-align: center;
+}
+
+.newbuttons {
+  margin: 0 auto !important;
+}
+
+.loginbutton{
+  background-color: #594A26 !important;
+ border: 1px solid #CEFF1A !important;
+  a {
+    color: #CEFF1A !important;
+  }
+}
+
+
+
+

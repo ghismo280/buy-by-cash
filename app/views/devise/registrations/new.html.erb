@@ -1,9 +1,30 @@
-<h2>Sign up</h2>
-
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <%= link_to root_path do %>
+    <i style="margin: 20px;color:#3e4704;" class="fas fa-times"></i>
+  <% end %>
+  <br>
+<br>
+  <div class="facebook" align="center">
+  <a href="https://www.facebook.com/" class="btn-facebook"> Register with Facebook </a>
+  </div>
+
+ <br>
+
+  <div class="google" align="center">
+      <a href="https://accounts.google.com/signup/v2/webcreateaccount?hl=it&flowName=GlifWebSignIn&flowEntry=SignUp" class="btn-google"> Register with Google </a>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="signup">
+    <p>OR SIGN UP</p>
+  </div>
+
+
+  <div class="form-inputs newform">
     <%= f.input :email,
                 required: true,
                 autofocus: true ,
@@ -17,9 +38,22 @@
                 input_html: { autocomplete: "new-password" } %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+
+
+  <div class="form-actions btn-google text-center">
+    <%= f.button :submit, "Sign up", class:"white" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<br>
+<br>
+
+
+
+
+
+<div class="btn-google loginbutton text-center">
+  <%= link_to "LOG IN", new_user_session_path %>
+</div>
+
+<%#= render "devise/shared/links" %>
