@@ -1,0 +1,14 @@
+<h2>Conversation with <%= Conversation.find(params[:id].to_i).sender.email %></h2>
+<br>
+<br>
+
+
+  <% @messages.each do |mex| %>
+
+    <div class="message-box">
+      <p style="font-size: 25px; margin:0px 20px 18px"><%= mex.body %></p>
+      <%= mex.created_at %>
+      <div class="center">
+      </div>
+    </div>
+<% end %>

@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  get 'messages', to: 'messages#index'
-  post 'messages', to: 'messages#accept'
-  delete 'messages', to: 'conversations#delete', as: 'delete_conversation'
+  get 'conversations', to: 'conversations#index'
+  post 'conversations', to: 'conversations#accept'
+  delete 'conversations', to: 'conversations#delete', as: 'delete_conversation'
+  get 'messages/:id', to: 'messages#show', as: 'show_message'
 
   get '/:id', to: 'pages#show', as: "show_ebuyer"
   get '/:id/conversations/new', to: 'conversations#new', as: "new_conversation"

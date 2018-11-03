@@ -13,6 +13,8 @@
 <br>
   <% @first_request.each do |conv| %>
 
+    <%= link_to show_message_path(id: conv.id) do %>
+
     <div class="message-box">
       <h2 class="text-center" > from: <%= conv.sender.name %> CN_ID: <%= conv.id %></h2>
       <h3><%= conv.sender.email %></h3>
@@ -24,45 +26,56 @@
         <% end %>
       </div>
       <div class="center">
-        <%= link_to messages_path(sender_id: conv.sender.id), method: :post do %>
+        <%= link_to conversations_path(sender_id: conv.sender.id), method: :post do %>
           <div class="btn btn-primary" ">Accept the job</div>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+
+<h2 class="text-center">Your Accepted Requests</h2>
+
+  <% @first_request.each do |conv| %>
+
+    <%= link_to show_message_path(id: conv.id) do %>
+
+    <div class="message-box">
+      <h2 class="text-center" > from: <%= conv.sender.name %> CN_ID: <%= conv.id %></h2>
+      <h3><%= conv.sender.email %></h3>
+      <p style="font-size: 25px; margin:0px 20px 18px"><%= conv.messages.last.body %></p>
+      <%= conv.messages.last.created_at %>
+      <div class="center">
+        <%= link_to delete_conversation_path(sender_id: conv.sender.id), method: :delete do %>
+          <div class="btn btn-danger" ">Delete Conversation</div>
+        <% end %>
+      </div>
+    </div>
+
+    <% end %>
+<% end %>
+
+
+<h2 class="text-center">Simple Messages</h2>
+
+  <% @first_request.each do |conv| %>
+
+    <%= link_to show_message_path(id: conv.id) do %>
+
+    <div class="message-box">
+      <h2 class="text-center" > from: <%= conv.sender.name %> CN_ID: <%= conv.id %></h2>
+      <h3><%= conv.sender.email %></h3>
+      <p style="font-size: 25px; margin:0px 20px 18px"><%= conv.messages.last.body %></p>
+      <%= conv.messages.last.created_at %>
+      <div class="center">
+        <%= link_to delete_conversation_path(sender_id: conv.sender.id), method: :delete do %>
+          <div class="btn btn-danger" ">Delete Conversation</div>
         <% end %>
       </div>
     </div>
   <% end %>
 
-
-  <% @first_request.each do |conv| %>
-
-    <div class="message-box">
-      <h2 class="text-center" > from: <%= conv.sender.name %> CN_ID: <%= conv.id %></h2>
-      <h3><%= conv.sender.email %></h3>
-      <p style="font-size: 25px; margin:0px 20px 18px"><%= conv.messages.last.body %></p>
-      <%= conv.messages.last.created_at %>
-      <div class="center">
-        <%= link_to delete_conversation_path(sender_id: conv.sender.id), method: :delete do %>
-          <div class="btn btn-danger" ">Delete Conversation</div>
-        <% end %>
-      </div>
-    </div>
-<% end %>
-
-
-
-  <% @first_request.each do |conv| %>
-
-    <div class="message-box">
-      <h2 class="text-center" > from: <%= conv.sender.name %> CN_ID: <%= conv.id %></h2>
-      <h3><%= conv.sender.email %></h3>
-      <p style="font-size: 25px; margin:0px 20px 18px"><%= conv.messages.last.body %></p>
-      <%= conv.messages.last.created_at %>
-      <div class="center">
-        <%= link_to delete_conversation_path(sender_id: conv.sender.id), method: :delete do %>
-          <div class="btn btn-danger" ">Delete Conversation</div>
-        <% end %>
-      </div>
-    </div>
-<% end %>
+  <% end %>
 
 <% else %>
 
