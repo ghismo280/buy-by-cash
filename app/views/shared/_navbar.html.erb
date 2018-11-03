@@ -6,13 +6,13 @@
 
 
  <% if user_signed_in? %>
- <%= link_to destroy_user_session_path, class: "" do %>
- <i class="fas fa-user-slash"></i>
- <% end %>
-  <% else %>
   <%= link_to destroy_user_session_path, method: :delete, class: "" do %>
-  <i class="fas fa-user"></i>
-  <% end %>
+      <i class="fas fa-user-slash"></i>
+    <% end %>
+  <% else %>
+    <%= link_to new_user_session_path, class: "" do %>
+      <i class="fas fa-user"></i>
+    <% end %>
   <% end %>
 
 </div>
