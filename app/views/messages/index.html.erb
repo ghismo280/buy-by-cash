@@ -15,7 +15,7 @@
       <p style="font-size: 25px; margin:0px 20px 18px"><%= mex.body %></p>
       <%= mex.created_at %>
       <div class="center">
-        <%= link_to '/' do  %>
+        <%= link_to messages_path(sender_id: mex.conversation.sender.id), method: :post do %>
           <div class="btn btn-primary" ">Accept the Job</div>
         <% end %>
       </div>

@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2018_11_02_142411) do
     t.bigint "recipient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "ask_for_job"
-    t.boolean "accept_job"
+    t.boolean "ask_for_job", default: false
+    t.boolean "accept_job", default: false
     t.index ["recipient_id"], name: "index_conversations_on_recipient_id"
     t.index ["sender_id"], name: "index_conversations_on_sender_id"
   end

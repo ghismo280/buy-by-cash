@@ -6,4 +6,16 @@ class MessagesController < ApplicationController
   def create
     @messages = Message.new
   end
+
+  def accept
+    @a = Conversation.where(recipient: current_user, sender: User.find(params[:sender_id].to_i)).first
+    if @a.ask_for_job == true
+      @a.accept_job = true
+      @a.save
+      flash[:success] = "Woohoo!"
+    else
+      flash[:success] = "Woohoo!"
+    end
+  end
+
 end

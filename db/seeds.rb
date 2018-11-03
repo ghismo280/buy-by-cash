@@ -52,7 +52,7 @@ end
 
 # CONVERSATION -----------------------------------
 puts "Creating Conversations"
-10.times do
+25.times do
   conversation = Conversation.new(
     sender_id: User.where(ebuyer: false).sample.id,
     recipient_id: User.where(ebuyer: true).sample.id,

@@ -9,7 +9,12 @@
   justify-content: space-between;
   position: relative;
   top: -35px;
+  display: inline-flex;
 
+}
+
+.navbar-wagon-brand:active{
+  text-decoration: none;
 }
 
 .navbar-wagon h1 {
@@ -19,8 +24,9 @@
   top: -25px;
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 400px;
+  text-decoration: none;
+  margin-left: 0.1vw;
 }
-
 
 /* Basic navbar item */
 .navbar-wagon-item {
@@ -32,10 +38,6 @@
 .navbar-wagon-link {
   color: #616668;
   font-size: 14px;
-}
-.navbar-wagon-link:hover {
-  color: #da552f;
-  text-decoration: none;
 }
 
 /* Dropdown menu */
@@ -52,10 +54,7 @@
   line-height: 22px !important;
   padding: 10px 20px;
 }
-.navbar-wagon-dropdown-menu li > a:hover {
-  background: transparent !important;
-  color: black !important;
-}
+
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
   height: 10px;
