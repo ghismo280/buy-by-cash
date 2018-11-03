@@ -1,22 +1,53 @@
 
-
 .main-card {
   display: flex;
   margin: 10px 0;
-  background-color: #FFFFFF;
-  border-bottom-left-radius: 75px;
-  border-top-left-radius: 75px;
-  border-bottom-right-radius: 2px;
-  border-top-right-radius: 2px;
+  padding: 15px;
+  background-color: #FAFAFA;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border: solid 1px;
+  border-color: #B3FF00;
   font-size: 12px;
+  color: black;
+  font-family: 'Barlow Condensed', sans-serif;
 }
 
 .avatar-ebuyer {
-  border-radius: 50%;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
   width: 30%;
   height: 30%;
 }
 
 .info {
   padding-left: 10px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.ebuyers {
+  padding-top: 10px;
+}
+
+#map {
+  margin-bottom: 120px;
+}
+
+.form-group {
+  text-align: center;
+}
+
+.text-center {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.form-container {
+  font-family: 'Barlow Condensed', sans-serif;
 }
