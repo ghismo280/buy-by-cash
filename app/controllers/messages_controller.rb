@@ -1,6 +1,8 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.where(conversation: Conversation.where(recipient: current_user))
+    @first_request = Message.where(conversation: Conversation.where(recipient: current_user, ask_for_job: true, accept_job: false))
+    @accepted_request = Message.where(conversation: Conversation.where(recipient: current_user, ask_for_job: true, accept_job: true))
+    @simple_messages = Message.where(conversation: Conversation.where(recipient: current_user, ask_for_job: false, accept_job: false))
   end
 
   def accept
@@ -13,4 +15,6 @@ class MessagesController < ApplicationController
       flash[:success] = "Woohoo!"
     end
   end
+
+
 end

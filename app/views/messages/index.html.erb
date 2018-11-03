@@ -8,7 +8,10 @@
 
 <% if user_signed_in? %>
 
-  <% @messages.each do |mex| %>
+
+<h2 class="text-center">Your Requests</h2>
+<br>
+  <% @first_request.each do |mex| %>
     <div class="message-box">
       <h2 class="text-center" > from: <%= mex.conversation.sender.name %></h2>
       <h3><%= mex.conversation.sender.email %></h3>
@@ -19,6 +22,30 @@
           <div class="btn btn-primary" ">Accept the Job</div>
         <% end %>
       </div>
+    </div>
+  <% end %>
+
+
+<h2 class="text-center">Your Accepted Requests</h2>
+<br>
+ <% @accepted_request.each do |mex| %>
+    <div class="message-box">
+      <h2 class="text-center" > from: <%= mex.conversation.sender.name %></h2>
+      <h3><%= mex.conversation.sender.email %></h3>
+      <p style="font-size: 25px; margin:0px 20px 18px"><%= mex.body %></p>
+      <%= mex.created_at %>
+    </div>
+  <% end %>
+
+
+<h2 class="text-center">Your Messages</h2>
+<br>
+  <% @simple_messages.each do |mex| %>
+    <div class="message-box">
+      <h2 class="text-center" > from: <%= mex.conversation.sender.name %></h2>
+      <h3><%= mex.conversation.sender.email %></h3>
+      <p style="font-size: 25px; margin:0px 20px 18px"><%= mex.body %></p>
+      <%= mex.created_at %>
     </div>
   <% end %>
 
