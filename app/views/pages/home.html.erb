@@ -12,8 +12,9 @@
 <br>
 <br>
 <br>
-<div class="becomeebuyer" align="center">
-  <p href="" class="btn-becomeebuyer"> Become an e-buyer </p>
+
+<div class="chat" align="center">
+  <%= link_to "Become an eBuyer", new_user_registration_path, class:"btn-becomeebuyer"   %>
 </div>
 
   <div
@@ -62,17 +63,16 @@
     <% end %>
   <% end %>
 
+<!-- chiusura container -->
+    </div>
 <div class="footer-container">
   <footer>
       <p>© 2018 BuyByCash</p>
       <ul>
           <li><%= link_to "Terms", "#" %></li>
-          <li><%= link_to "Become an eBuyer", new_user_registration_path %></li>
       </ul>
   </footer>
 </div>
-<!-- chiusura container -->
-    </div>
 
 
 <%= javascript_tag do %>
