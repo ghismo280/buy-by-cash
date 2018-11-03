@@ -12,7 +12,6 @@ Review.destroy_all
 
 puts "Creating eBuyers"
 10.times do
-url = "http://i.pravatar.cc/150"
   ebuyer = User.new(
     name: Faker::Name.first_name,
     surname: Faker::Name.middle_name,
@@ -24,7 +23,7 @@ url = "http://i.pravatar.cc/150"
     bio: Faker::Lorem.paragraph,
     tagline: Faker::RickAndMorty.quote,
     password: "123456",
-    photo: url,
+    photo: "http://i.pravatar.cc/150",
     average_rating: rand(1..5),
     fee: rand(10..20),
     start_date: Faker::Date.between(2.days.ago, Date.today) #=> "Wed, 24 Sep 2014"
