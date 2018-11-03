@@ -7,7 +7,8 @@ class MessagesController < ApplicationController
     @a = Conversation.where(recipient: current_user, sender: User.find(params[:sender_id].to_i)).first
     if @a.ask_for_job == true
       @a.accept_job = true
-      redirect_to '/messages'
+      @a.save
+      flash[:success] = "Woohoo!"
     else
       flash[:success] = "Woohoo!"
     end
