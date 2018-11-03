@@ -13,10 +13,11 @@
 <br>
   <% @first_request.each do |conv| %>
 
-    <%= link_to show_message_path(id: conv.id) do %>
 
     <div class="message-box">
+    <%= link_to show_message_path(id: conv.id) do %>
       <h2 class="text-center" > from: <%= conv.sender.name %> CN_ID: <%= conv.id %></h2>
+  <% end %>
       <h3><%= conv.sender.email %></h3>
       <p style="font-size: 25px; margin:0px 20px 18px"><%= conv.messages.last.body %></p>
       <%= conv.messages.last.created_at %>
@@ -32,16 +33,16 @@
       </div>
     </div>
     <% end %>
-  <% end %>
 
 <h2 class="text-center">Your Accepted Requests</h2>
 
   <% @first_request.each do |conv| %>
 
-    <%= link_to show_message_path(id: conv.id) do %>
 
     <div class="message-box">
+    <%= link_to show_message_path(id: conv.id) do %>
       <h2 class="text-center" > from: <%= conv.sender.name %> CN_ID: <%= conv.id %></h2>
+<% end %>
       <h3><%= conv.sender.email %></h3>
       <p style="font-size: 25px; margin:0px 20px 18px"><%= conv.messages.last.body %></p>
       <%= conv.messages.last.created_at %>
@@ -53,17 +54,17 @@
     </div>
 
     <% end %>
-<% end %>
 
 
 <h2 class="text-center">Simple Messages</h2>
 
   <% @first_request.each do |conv| %>
 
-    <%= link_to show_message_path(id: conv.id) do %>
 
     <div class="message-box">
+    <%= link_to show_message_path(id: conv.id) do %>
       <h2 class="text-center" > from: <%= conv.sender.name %> CN_ID: <%= conv.id %></h2>
+  <% end %>
       <h3><%= conv.sender.email %></h3>
       <p style="font-size: 25px; margin:0px 20px 18px"><%= conv.messages.last.body %></p>
       <%= conv.messages.last.created_at %>
@@ -75,7 +76,6 @@
     </div>
   <% end %>
 
-  <% end %>
 
 <% else %>
 
