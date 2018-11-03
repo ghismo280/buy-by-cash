@@ -49,12 +49,10 @@
 <br>
 
 <div class="chat" align="center">
-<a href="" class="btn-chat"> START CHATTING WITH <%= @ebuyer.name.upcase %></a>
+  <%= link_to "start a conversationt with #{@ebuyer.name.upcase}", new_conversation_path(recipient: @ebuyer), class:"btn-chat"   %>
 </div>
 
-<h2>start your conversation</h2>
 
 
 
-<%= link_to "start a conversationt with #{@ebuyer.name}", new_conversation_path(recipient: @ebuyer)   %>
 

@@ -21,7 +21,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: black;
   margin: 0 auto;
 }
 
@@ -30,7 +29,21 @@
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
+
+.bannerwhite h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
 .banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+.bannerwhite p {
   font-size: 25px;
   font-weight: lighter;
   color: rgb(255, 255, 255);
@@ -105,11 +118,11 @@
   border: 1px solid #CEFF1A !important;
   display: flex;
   justify-content: space-around;
+  margin-left: 155px;
+  margin-right: 155px;
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: bold;
   text-decoration: none;
-  margin-left: 155px;
-  margin-right: 155px;
   border-radius: 4px;
 }
 
