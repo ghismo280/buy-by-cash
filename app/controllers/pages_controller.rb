@@ -21,7 +21,9 @@ class PagesController < ApplicationController
   end
 
   def show
+    @conversation = Conversation.new
     @ebuyer = User.find(params[:id])
+
   end
 
   private
