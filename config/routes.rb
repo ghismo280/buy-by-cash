@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'messages', to: 'messages#index'
   post 'messages', to: 'messages#accept'
+  delete 'messages', to: 'conversations#delete', as: 'delete_conversation'
 
   get '/:id', to: 'pages#show', as: "show_ebuyer"
   get '/:id/conversations/new', to: 'conversations#new', as: "new_conversation"

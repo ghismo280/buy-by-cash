@@ -15,6 +15,12 @@ class ConversationsController < ApplicationController
     redirect_to messages_path
   end
 
+  def delete
+    @a = Conversation.where(recipient: current_user, sender: User.find(params[:sender_id].to_i)).first
+    @a.destroy
+    redirect_to messages_path
+  end
+
 private
 
   def conversation_params

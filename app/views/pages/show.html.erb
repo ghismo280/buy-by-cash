@@ -48,11 +48,18 @@
 <br>
 <br>
 
-<div class="chat" align="center">
-  <%= link_to "start a conversationt with #{@ebuyer.name.upcase}", new_conversation_path(recipient: @ebuyer), class:"btn-chat"   %>
-</div>
+<% if user_signed_in? %>
+  <div class="chat" align="center">
+    <%= link_to "start a conversationt with #{@ebuyer.name.upcase}", new_conversation_path(recipient: @ebuyer), class:"btn-chat"   %>
+  </div>
 
+  <% else %>
 
+  <div class="chat" align="center">
+    <%= link_to "start a conversationt with #{@ebuyer.name.upcase}", new_user_session_path, class:"btn-chat" %>
+  </div>
+
+<% end %>
 
 
 
