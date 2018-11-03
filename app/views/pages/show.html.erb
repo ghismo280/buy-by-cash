@@ -27,6 +27,17 @@
     <i class="fas fa-star"></i>
    <% end %>
  </div>
+ <br>
+
+ <div class="date" align="center">
+   <p href="" class="btn-date">  User since <%= @ebuyer.start_date %></p>
+ </div>
+
+
+<div class="fee" align="center">
+  <a href="" class="btn-fee">  <p> MIN FEE </p>
+     <p> <%= @ebuyer.fee %> € </p></a>
+</div>
 
 <br>
 <br>
@@ -38,14 +49,10 @@
 <br>
 
 <div class="chat" align="center">
-<a href="" class="btn-chat"> Start chatting with <%= @ebuyer.name%></a>
+  <%= link_to "start a conversationt with #{@ebuyer.name.upcase}", new_conversation_path(recipient: @ebuyer), class:"btn-chat"   %>
 </div>
 
-<h2>start your conversation</h2>
 
-
-
-<%= link_to "start a conversationt with #{@ebuyer.name}", new_conversation_path(recipient: @ebuyer)   %>
 
 
 
