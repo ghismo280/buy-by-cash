@@ -41,21 +41,11 @@
 <a href="" class="btn-chat"> Start chatting with <%= @ebuyer.name%></a>
 </div>
 
-<h2>Log in</h2>
+<h2>start your conversation</h2>
 
 
 
-<%= simple_form_for ':id/conversations' do |f| %>
-  <div class="form-group">
-    <%= f.label :message %>
-    <%= f.text_field :message, class: 'form-control' %>
-  </div>
-
-<!-- here goes the date picker -->
-
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
-
+<%= link_to "start a conversationt with #{@ebuyer.name}", new_conversation_path(recipient: @ebuyer)   %>
 
 
 

@@ -1,6 +1,8 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.where(conversation: Conversation.where(recipient: current_user))
+
+    @messages = Message.where(conversation: Conversation.where(sender: current_user))
+
   end
 
   def create
