@@ -13,11 +13,21 @@
 <br>
 <br>
 
+
 <%= link_to new_user_registration_path do %>
   <div class="becomeebuyer" align="center">
     <p href="" class="btn-becomeebuyer"> Become an e-buyer </p>
   </div>
 <% end %>
+
+<div class="chat" align="center">
+  <%= link_to "Become an eBuyer", new_user_registration_path, class:"btn-becomeebuyer"   %>
+</div>
+
+<div class="howdoesitwork" align="center">
+  <p href="" class="btn-howdoesitwork"> How does it work? </p>
+</div>
+
 
   <div
   id="map"
@@ -28,22 +38,25 @@
   <p href="" class="btn-howdoesitwork"> How does it work? </p>
 </div>
 
-<div class="container">
-  <h3 class="text-center">
-    These guys can help you:
-  </h3>
 
+
+<div class="container">
 
 <div class="form-container">
   <form>
     <div class="form-group">
-      <label for="citySearchBox">City search</label>
-      <input type="text" class="form-control" id="citySearchBox" aria-describedby="cityHelp" placeholder="Enter your city">
-      <small id="emailHelp" class="form-text text-muted">Enter the city where you live and you'll see the nearest people who can help you.</small>
+ <!-- <label for="citySearchBox">Enter your location</label> -->
+      <input type="text" class="form-control" id="citySearchBox" aria-describedby="cityHelp" placeholder="Enter your city here">
+<!--  <small id="emailHelp" class="form-text text-muted">Enter the city where you live and you'll see the nearest people who can help you.</small> -->
     </div>
   </form>
 </div>
 
+  <h3 class="text-center">
+    Meet our eBuyers
+  </h3>
+
+<div class="ebuyers">
   <% @ebuyers.each do |ebuyer| %>
     <%= link_to "/#{ebuyer.id}" do%>
      <div class="main-card">
@@ -64,18 +77,18 @@
     </div>
     <% end %>
   <% end %>
+</div>
 
+<!-- chiusura container -->
+    </div>
 <div class="footer-container">
   <footer>
       <p>© 2018 BuyByCash</p>
       <ul>
           <li><%= link_to "Terms", "#" %></li>
-          <li><%= link_to "Become an eBuyer", new_user_registration_path %></li>
       </ul>
   </footer>
 </div>
-<!-- chiusura container -->
-    </div>
 
 
 <%= javascript_tag do %>

@@ -68,9 +68,24 @@
   border-top: 1px solid #E6E6E6;
 }
 
-.fa-user{
+.fa-user {
   color: #594A26;
   margin-top: 20px;
+}
+
+.fa-user-slash {
+  color: #594A26;
+  margin-top: 20px;
+}
+
+.fa-envelope  {
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.messages {
+  text-decoration: none;
+  color: white;
 }
 
 .btn-tagline  {
@@ -101,6 +116,7 @@
   background-color: #CEFF1A !important;
   text-align: center;
   font-family: 'Barlow Condensed', sans-serif;
+  z-index: 1000;
 }
 
 .btn-becomeebuyer {
