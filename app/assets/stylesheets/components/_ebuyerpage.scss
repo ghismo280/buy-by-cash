@@ -10,6 +10,7 @@
   justify-content: center;
   background-image: url("https://picsum.photos/200/300/?random");
   margin: 0 auto;
+  font-weight: bold;
 }
 .bannerwhite{
   color: white;
@@ -81,20 +82,43 @@
 
 .btn-chat  {
   font-size: 10px;
-  color: white;
   padding: 10px 15px;
   border-radius: 4px;
+  color: #CEFF1A !important;
   font-weight: bold;
-  background: black;
+  background-color: #594A26 !important;
+  border: 1px solid #CEFF1A !important;
   transition: background 0.3s ease;
   text-align: center;
   font-family: 'Barlow Condensed', sans-serif;
 }
-.btn-chat:hover {
-  opacity: 1;
-  background: #3ac162;
-  text-decoration: none;
-  color: white;
 
+.btn-chat a p {
+  color: #CEFF1A !important;
+  text-align: center;
+  text-decoration: none;
 }
 
+
+.fee {
+  background-color: #594A26 !important;
+  border: 1px solid #CEFF1A !important;
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 155px;
+  margin-right: 155px;
+  border-radius: 4px;
+}
+
+.fee a p {
+  color: #CEFF1A !important;
+  text-align: center;
+}
+
+.btn-date {
+ font-size: 15px;
+ font-family: 'Barlow Condensed', sans-serif;
+}
