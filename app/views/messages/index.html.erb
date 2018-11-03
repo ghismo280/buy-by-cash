@@ -13,7 +13,7 @@
 <br>
   <% @first_request.each do |mex| %>
     <div class="message-box">
-      <h2 class="text-center" > from: <%= mex.conversation.sender.name %></h2>
+      <h2 class="text-center" > from: <%= mex.conversation.sender.name %> CN_ID: <%= mex.conversation.id %></h2>
       <h3><%= mex.conversation.sender.email %></h3>
       <p style="font-size: 25px; margin:0px 20px 18px"><%= mex.body %></p>
       <%= mex.created_at %>
@@ -30,7 +30,7 @@
 <br>
  <% @accepted_request.each do |mex| %>
     <div class="message-box">
-      <h2 class="text-center" > from: <%= mex.conversation.sender.name %></h2>
+      <h2 class="text-center" > from: <%= mex.conversation.sender.name %> CN_ID: <%= mex.conversation.id %></h2>
       <h3><%= mex.conversation.sender.email %></h3>
       <p style="font-size: 25px; margin:0px 20px 18px"><%= mex.body %></p>
       <%= mex.created_at %>
@@ -42,7 +42,7 @@
 <br>
   <% @simple_messages.each do |mex| %>
     <div class="message-box">
-      <h2 class="text-center" > from: <%= mex.conversation.sender.name %></h2>
+      <h2 class="text-center" > from: <%= mex.conversation.sender.name %> CN_ID: <%= mex.conversation.id %></h2>
       <h3><%= mex.conversation.sender.email %></h3>
       <p style="font-size: 25px; margin:0px 20px 18px"><%= mex.body %></p>
       <%= mex.created_at %>

@@ -52,18 +52,27 @@ end
 
 # CONVERSATION -----------------------------------
 puts "Creating Conversations"
-25.times do
+10.times do
   conversation = Conversation.new(
     sender_id: User.where(ebuyer: false).sample.id,
-    recipient_id: User.where(ebuyer: true).sample.id,
+    recipient: User.all.first,
+    ask_for_job: true
   )
   conversation.save!
 end
 
+3.times do
+  conversation = Conversation.new(
+    sender_id: User.where(ebuyer: false).sample.id,
+    recipient: User.all.first,
+    ask_for_job: false,
+  )
+  conversation.save!
+end
 
 # MESSAGE -----------------------------------
 puts "Creating Messages"
-80.times do
+40.times do
   message = Message.new(
     body: Faker::Seinfeld.quote,
     conversation_id: Conversation.all.sample.id,
